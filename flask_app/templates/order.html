@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="wrapper">
+        <div class="home-nav">
+            <h1>Cookie Monster's Cookies</h1>
+            <div id="nav-bar">
+                <a href="/dashboard">Home</a>
+                <a href="/checkout">Order</a>
+                <a href="/edit_account/{{user.id}}">Account</a>
+                <a href="/logout">Logout</a>
+            </div>
+        </div>
+        <div class="content">
+            <div class="content-header">
+                <h2>Bake a Cookie</h2>
+            </div>
+            <div class="content">
+                <form action="/order/new/add" method="post">
+                    <input type="hidden" value="{{user.id}}" name="user_id">
+                    <div>
+                        <label for="Method">PickUp or CarryOut </label>
+                        <select id="method" name="method">
+                            <option value="PickUp">PickUp</option>
+                            <option value="CarryOut">CarryOut</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label for="base">Cookie Dough Base </label>
+                        <select id="base" name="base">
+                            <option value="Regular">Regular</option>
+                            <option value="Chocolate">Chocolate</option>
+                            <option value="Oatmeal">Oatmeal</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label for="mixin1">Mix-in </label>
+                        <select id="mixin1" name="mixin1">
+                            <option value="Semi-Sweet Choco Chip">Semi-Sweet Choco Chip</option>
+                            <option value="Milk Choco Chip">Milk Choco Chip</option>
+                            <option value="Dark Choco Chip">Dark Choco Chip</option>
+                            <option value="M&Ms">M&Ms</option>
+                            <option value="Macadamia Nuts">Macadamia Nuts</option>
+                            <option value="White Choco Chip">White Choco Chip</option>
+                            <option value="Peanut Butter Chip">Peanut Butter Chip</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label for="quantity">Quantity </label>
+                        <select id="quantity" name="quantity">
+                            {% for i in range(1,13) %}
+                                <option value="{{i}}">{{i}}</option>
+                            {% endfor %}
+                        </select>
+                    </div>
+                    <input type="hidden" value="none" name="mixin2">
+                    <input type="submit" value="Add to Order">
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

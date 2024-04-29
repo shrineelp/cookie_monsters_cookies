@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="wrapper">
+        <div class="home-nav">
+            <h1>Cookie Monster's Cookies</h1>
+            <div id="nav-bar">
+                <a href="/dashboard">Home</a>
+                <a href="/checkout">Order</a>
+                <a href="/edit_account/{{user.id}}">Account</a>
+                <a href="/logout">Logout</a>
+            </div>
+        </div>
+        <div class="content">
+            <div class="col-1">
+                <h2>Account Info</h2>
+                <form action="/edit" method="post">
+                    <input type="hidden" name="id" value="{{user.id}}">
+                    <div>
+                        <label for="first_name">First Name </label>
+                        <input type="text" name="first_name" value="{{user.first_name}}">
+                    </div>
+                    <div>
+                        <label for="last_name">Last Name </label>
+                        <input type="text" name="last_name" value="{{user.last_name}}">
+                    </div>
+                    <div>
+                        <label for="email">Email </label>
+                        <input type="text" name="email" value="{{user.email}}">
+                    </div>
+                    <div>
+                        <label for="address">Address </label>
+                        <input type="text" name="address" value="{{user.address}}">
+                    </div>
+                    <div>
+                        <label for="city">City </label>
+                        <input type="text" name="city" value="{{user.city}}">
+                    </div>
+                    <div>
+                        <label for="state">State </label>
+                        <select id="state" name="state" value="{{user.state}}">
+                            <option value="CA">CA</option>
+                            <option value="NY">NY</option>
+                        </select>
+                    </div>
+                    <input type="submit" value="Update">
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

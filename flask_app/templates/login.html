@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="wrapper">
+        <div id="home-nav">
+            <h1>Cookie Monster's Cookies</h1>
+            <a href="/">Not a Monster Yet? Join the Monsters!</a>
+        </div>
+        <div class="content">
+            <div id="login">
+                <h2>Welcome Back Monster!</h2>
+                {% with login_messages = get_flashed_messages(category_filter=['login']) %}
+                    {% if login_messages %}
+                        {% for message in login_messages %}
+                            <p class="red_text">{{message}}</p>
+                        {% endfor %}
+                    {% endif %}
+                {% endwith %}
+                <form action="/login" method="post">
+                    <div>
+                        <label for="email">Email </label>
+                        <input type="text" name="email">
+                    </div>
+                    <div>
+                        <label for="password">Password </label>
+                        <input type="password" name="password">
+                    </div>
+                    <input type="submit" value="Log In">
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

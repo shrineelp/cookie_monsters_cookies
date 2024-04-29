@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="wrapper">
+        <div class="home-nav">
+            <h1>Cookie Monster's Cookies</h1>
+            <div id="nav-bar">
+                <a href="/dashboard">Home</a>
+                <a href="/checkout">Order</a>
+                <a href="/edit_account/{{user.id}}">Account</a>
+                <a href="/logout">Logout</a>
+            </div>
+        </div>
+        <div class="content">
+            <div class="content-header">
+                <h2>What You Tryna Cook Up?</h2>
+            </div>
+            <div class="content-cols">
+                <div class="col-1">
+                    <div class="option">
+                        <p>Delicious gooey, semi-sweet chocolate chip in regular cookie dough. Truly a classic.</p>
+                        <a href="/order/fave1">OG Choco Chip</a>
+                    </div>
+                    <div class="option">
+                        <p>Regular cookie dough mixed with M&Ms instead of chocolate chips. Twist on a classic.</p>
+                        <a href="/order/fave2">OG M&M</a>
+                    </div>
+                </div>
+                <div class="col-2">
+                    <p>Create your own unique cookie!</p>
+                    <a href="/order/new">Start Now!</a>
+                </div>
+                <div class="col-3">
+                    <p>Can't decide? Randomize your cookie creation!</p>
+                    <a href="/order/random">I'm Feeling Lucky!</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
